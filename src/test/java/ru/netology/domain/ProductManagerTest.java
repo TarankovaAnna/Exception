@@ -1,6 +1,6 @@
 package ru.netology.domain;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -26,7 +26,7 @@ public class ProductManagerTest {
 
 
 
-    /*  @BeforeEach
+    @BeforeEach
     public void setup() {
         manager.add(book1);
         manager.add(book2);
@@ -37,20 +37,12 @@ public class ProductManagerTest {
         manager.add(smartphone3);
         manager.add(smartphone4);
         manager.add(smartphone5);
-    }*/
+    }
 
 
     @Test
     public void shouldSearchOneBook() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
 
         Product[] expected = {book1};
         Product[] actual = manager.searchBy("Над пропостью во ржи");
@@ -61,15 +53,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldEmptyRequest() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {book1, book2, book3, book4, smartphone1, smartphone2, smartphone3, smartphone4, smartphone5};
         Product[] actual = manager.searchBy("");
 
@@ -79,15 +63,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchNumber() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {smartphone1, smartphone2};
         Product[] actual = manager.searchBy("2");
 
@@ -97,15 +73,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchOneCyrillicLetter() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {book1, book2, book3, book4};
         Product[] actual = manager.searchBy("и");
 
@@ -115,15 +83,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchOneLatinLetter() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {smartphone3, smartphone4};
         Product[] actual = manager.searchBy("i");
 
@@ -133,15 +93,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchWhitespace() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {book1, book2, book3, book4, smartphone1, smartphone2, smartphone3, smartphone4, smartphone5};
         Product[] actual = manager.searchBy(" ");
 
@@ -151,15 +103,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchOneCyrillicWorld() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {book4};
         Product[] actual = manager.searchBy("мир");
 
@@ -169,15 +113,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchOneLatinWorld() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {smartphone5};
         Product[] actual = manager.searchBy("Honor");
 
@@ -187,15 +123,7 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchMissingWorld() {
-        manager.add(book1);
-        manager.add(book2);
-        manager.add(book3);
-        manager.add(book4);
-        manager.add(smartphone1);
-        manager.add(smartphone2);
-        manager.add(smartphone3);
-        manager.add(smartphone4);
-        manager.add(smartphone5);
+
         Product[] expected = {};
         Product[] actual = manager.searchBy("Земля");
 

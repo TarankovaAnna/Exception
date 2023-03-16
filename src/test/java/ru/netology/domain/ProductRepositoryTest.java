@@ -1,6 +1,6 @@
 package ru.netology.domain;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.lang.annotation.Target;
